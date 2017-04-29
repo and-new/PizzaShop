@@ -9,7 +9,7 @@ class AddProducts < ActiveRecord::Migration[5.1]
   				   :is_best_offer => false,
   				   :path_to_image => '/images/p1.jpg'
 
-  	Product.create :title => 'p2',
+  	Product.create :title => 'Пицца с ветчиной',
   				   :description => 'Nice Pepperoni pizza',
   				   :price => 450,
   				   :size => 30,
