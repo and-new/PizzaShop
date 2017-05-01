@@ -1,4 +1,3 @@
-
 function something()
 {
 	var x = window.localStorage.getItem('bbb'); // x = hh ['bbb']
@@ -22,6 +21,7 @@ function add_to_cart(id)
 	//вывод кол-ва item'ов в корзине
 	//alert('Items in your cart: ' + cart_get_number_of_items());
 	update_orders_input();
+	update_orders_button();
 }
 
 function update_orders_input()
@@ -31,6 +31,11 @@ function update_orders_input()
 
 }
 
+function update_orders_button()
+{
+	var text = 'Cart (' +  cart_get_number_of_items() + ')';
+	$('#orders_button').val(text);
+}
 
 
 function cart_get_number_of_items()
@@ -41,7 +46,7 @@ function cart_get_number_of_items()
 		var key = window.localStorage.key(i); //получаем ключ
 		var value = window.localStorage.getItem(key); //получаем значение
 
-		if(key.indexOf('product_') == 0
+		if(key.indexOf('product_') == 0)
 		{
 			cnt = cnt + value * 1;
 		}
@@ -58,7 +63,7 @@ function cart_get_orders()
 		var key = window.localStorage.key(i); //получаем ключ
 		var value = window.localStorage.getItem(key); //получаем значение
 
-		if(key.indexOf('product_') == 0
+		if(key.indexOf('product_') == 0)
 		{
 			orders = orders + key + '=' + value + ','
 		}
